@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         if (!$request->ajax()) {
-            return view('dashboard');
+            return view('restaurants');
         }
         
         $shops = Shop::select(['id', 'name'])
