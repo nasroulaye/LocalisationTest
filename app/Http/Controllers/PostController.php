@@ -605,9 +605,7 @@ class PostController extends Controller
             'dashboard_set_stitle' => $dashboard_set_stitle,
             'dashboard_set_keys' => $dashboard_set_keys,
             'dashboard_set_desc' => $dashboard_set_desc,
-            'dashboard_alert_success' => $dashboard_alert_success,
-            'Nombre_Restos' => Restaurants::all()->count(),
-            'Restaurants' => Restaurants::all()
+            'dashboard_alert_success' => $dashboard_alert_success
         ]);
     }
 

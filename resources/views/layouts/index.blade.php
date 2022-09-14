@@ -6,22 +6,7 @@
 				<p>{{ $home_nearby_desc }}</p>
 			</div>
 
-			<div class="row">
-				@if ($Nombre_Restos > 0)
-					@foreach($Restaurants as $restaurants)
-						<div class="col-3">
-							<div class="pt-item">
-								<div class="pt-thumb"><img src="{{ $restaurants->avatar }}" alt="$nearby_rs_name" onerror="this.src='{{ asset('img/noimage.jpg') }}'"></div>
-								<div class="pt-title"><a href="#"><h3>{{ $restaurants->nom }}</h3></a></div>
-								<div class="pt-stars"><strong>{{ $restaurants->distance }}</strong></div>
-								<div class="pt-address"><i class="fas fa-map-marker-alt"></i>{{ $restaurants->adresse }}</div>
-							</div>
-						</div>
-					@endforeach
-				@else
-					<div class="text-center">{{ $alerts_no_data }}</div>
-				@endif
-			</div>
+			
 		</div>
 	</div>
 
