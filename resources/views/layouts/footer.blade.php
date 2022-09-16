@@ -35,124 +35,26 @@
 </div><!-- End wrapper -->
 </div><!-- End Scroller -->
 
-
-<form id="sendsignin">
+<form  method="POST" action="{{ route('logout') }}" id="sendsignin">
+	@csrf
 	<div class="modal fade newmodal" id="loginModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">{{ $login_title }}</h4>
+					<h4 class="modal-title">Se Déconnecter</h4>
 					<button type="button" class="close" data-dismiss="modal">×</button>
 				</div>
 				<div class="modal-body">
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-user"></i></span>
-						<input type="text" name="sign_name" placeholder="{{ $login_username }}">
-					</div>
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-key"></i></span>
-						<input type="password" name="sign_pass" placeholder="{{ $login_password }}">
-					</div>
-					<div class="row">
-						<div class="col">
-							<div class="form-group">
-								<input type="checkbox" name="sign_type" id="ck1" value="1" class="choice">
-								<label for="ck1">{{ __('Remember me') }}</label>
-							</div>
-						</div>
-					</div>
-					<div class="pt-msg"></div>
-					<button type="submit">{{ $login_btn }}</button>
-
-					<?php //if(site_register): ?>
-						<p>{{ $login_footer }} <b><a data-toggle="modal" href="#registerModal">{{ $login_footer_l }}</a></b></p>
-					<?php //endif; ?>
-				</div>
-
-			</div>
-		</div>
-	</div>
-</form>
-
-<?php //if(site_register): ?>
-
-<form method="POST" action="{{ route('register') }}">
-	@csrf
-	<div class="modal fade newmodal" id="registerModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-
-				<div class="modal-header">
-					<h4 class="modal-title">{{ $signup_title }}</h4>
-					<button type="button" class="close" data-dismiss="modal">×</button>
-				</div>
-				<div class="modal-body">
-					<!--Nom-->
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-user"></i></span>
-						<input id="name" type="text" name="name" :value="old('name')" placeholder="{{ $signup_username }}" autofocus required>
-					</div>
-
-					<!--Email-->
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-envelope"></i></span>
-						<input type="email" id="email" name="email" :value="old('email')" placeholder="{{ $signup_email }}" required>
-					</div>
-
-					<!--Password-->
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-key"></i></span>
-						<input id="password" type="password" name="password" placeholder="{{ $signup_password }}" required>
-					</div>
-
-					<!--Confirm Password-->
-					<div class="form-group pt-form-icon">
-						<span><i class="icons icon-lock-open"></i></span>
-						<input id="password_confirmation" type="password" name="password_confirmation" placeholder="{{ $signup_rpassword }}" required>
-					</div>
-					<div class="pt-msg"></div>
-					<button type="submit">S'enregistrer</button>
-					<p>Avez-vous un compte ? <b><a data-toggle="modal" href="#registerModal" data-dismiss="modal">Connectez-vous !</a></b></p>
+					<x-dropdown-link :href="route('logout')"
+						onclick="event.preventDefault();
+						this.closest('form').submit();">
+						{{ __('Déconnexion') }}
+					</x-dropdown-link>
 				</div>
 			</div>
 		</div>
 	</div>
 </form>
-<?php //else: ?>
-	<form id="sendpassword">
-		<div class="modal fade newmodal" id="passwordModal">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">{{ $header_change_password }}</h4>
-						<button type="button" class="close" data-dismiss="modal">×</button>
-					</div>
-					<div class="modal-body">
-						<div class="form-row">
-							<div class="col">
-								<div class="form-group pt-form-icon">
-									<span><i class="icons icon-key"></i></span>
-									<input type="password" name="oldpass" placeholder=" {{ $header_change_pass_i1 }}">
-								</div>
-							</div>
-							<div class="col">
-								<div class="form-group pt-form-icon">
-									<span><i class="icons icon-key"></i></span>
-									<input type="password" name="newpass" placeholder="{{ $header_change_pass_i2 }}">
-								</div>
-							</div>
-						</div>
-						<div class="pt-msg"></div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="pt-btn">{{ $header_change_pass_bt }}</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
-
-<?php //endif; ?>
 
 <form id="senditemtocart">
 <div class="modal fade newmodal" id="addtocartModal">

@@ -12,28 +12,20 @@
         </div>
     </div>
 
+    <!--Recherche de restaurant -->
     <div class="container" id="restaurants">
         <div class="row pt-restaurants">
             <div class="col-4">
                 <div class="pt-restaurant-sidebar">
-                    <div class="pt-search">
-                        <div class="pt-input">
-                            <input type="text" placeholder="Rechercher..">
-                            <i class="icons icon-magnifier"></i>
-                        </div>
-                    </div>
-                    <form method="get">
-                        <h6>Ouverture</h6>
-                        <div>
-                            <input type="checkbox" name="open" value="all" id="op0" class="choice" checked>
-                            <label for="op0">Voir tout</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="open" value="true" id="op1" class="choice">
-                            <label for="op1">Ouverts maintenant</label>
+                    <form v-on:submit.prevent="fetchShops">
+                        <div class="pt-search">
+                            <div class="pt-input">
+                            <x-input placeholder="Rechercher un restaurant" v-model="shopName" />
+                                <i class="icons icon-magnifier"></i>
+                            </div>
                         </div>
                         <div class="pt-submit">
-                            <button type="submit">Appliquer filtres  <i class="fas fa-long-arrow-alt-right"></i></button>
+                            <x-button>Rechercher <i class="fas fa-long-arrow-alt-right"></i></x-button>
                         </div>
                     </form>
                 </div>
@@ -114,3 +106,4 @@
         </script>
     @endpush
 </x-app-layout>
+@include('layouts.footer')

@@ -7,7 +7,25 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>DonExpress</title>
+
+        <meta name="title" content="DonExpress">
+        <meta name="description" content="<?php echo "Don Express : application de Livraison de repas" ?>">
+        <meta name="keywords" content="<?php echo "Livraison Repas Lomé commander" ?>">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="<?php echo "Site url" ?>">
+        <meta property="og:title" content="DonExpress">
+        <meta property="og:description" content="<?php echo "Site description" ?>">
+        <meta property="og:image" content="<?php echo "Site url" ?>">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="<?php echo "Site url" ?>">
+        <meta property="twitter:title" content="DonExpress">
+        <meta property="twitter:description" content="<?php echo "Site description" ?>">
+        <meta property="twitter:image" content="<?php echo "Site url" ?>">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,900%7CGentium+Basic:400italic%7COpen+Sans:400italic,700italic,400,300,700">

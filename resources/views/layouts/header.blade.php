@@ -14,25 +14,23 @@
 							<li class="pt-mobile-menu">
 								<a href="#"><i class="icon-menu icons"></i></a>
 								<ul class="pt-drop">
-									<li><a href="/">{{ $header_home }}</a></li>
-									<li><a href="/restaurants">{{ $header_restaurants }}</a></li>
-									<li><a href="/about">{{ $header_about }}</a></li>
-									<li><a href="/contact">{{ $header_contact }}</a></li>
+									<li><a href="/">Accueil</a></li>
+									<li><a href="/restaurants">Restaurants</a></li>
+									<li><a href="/about">A propos</a></li>
+									<li><a href="/contact">Contactez-nous</a></li>
 								</ul>
 							</li>
 
 							<li class="pt-cart">
-								<a href="#">
+								<a href="/cart">
 									<i class="icon-basket icons"></i>
-									<b>10</b>
+									<b>{{ Cart::getTotalQuantity()}}</b>
 								</a>
 							</li>
-
-							<?php //if(us_level): ?>
-								
-							<?php //else: ?>
-								<li class="pt-login"><a data-toggle="modal" href="#loginModal"><i class="icon-user icons"></i>{{ $login_title }}</a></li>
-							<?php //endif; ?>
+							<li class="pt-login">
+								<a data-toggle="modal" href="#loginModal"><i class="icon-user icons"></i>{{ Auth::user()->nom }}</a>
+							</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -46,17 +44,17 @@
 						<p>
 							DonExpress vous permet de vous faire livrer vos repas de restaurants et de petites courses partout à Lomé
 						</p>
-						<a href="restaurants"> {{ $header_btn }} <i class="fas fa-long-arrow-alt-right"></i></a>
+						<a href="restaurants"> COMMANDER MAINTENANT<i class="fas fa-long-arrow-alt-right"></i></a>
 						<div class="pt-info">
 							<div>
 								<span><i class="icons icon-clock"></i></span>
-								<h3>{{ $header_today }}</h3>
-								<p>{{ $header_working_hours }}</p>
+								<h3>Aujourd'hui 08h - 19h</h3>
+								<p>Horaires</p>
 							</div>
 							<div>
 								<span><i class="icons icon-phone"></i></span>
-								<h3>{{ $header_phone }}</h3>
-								<p>{{ $header_call }}</p>
+								<h3>+228 70 30 55 66</h3>
+								<p>Nous appeler</p>
 							</div>
 						</div>
 					</div>

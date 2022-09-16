@@ -9,8 +9,8 @@
 	<title><?=fh_title()?></title>
 
 	<meta name="title" content="DonExpress">
-	<meta name="description" content="<?php echo "Site description" ?>">
-	<meta name="keywords" content="<?php echo "Site keywords" ?>">
+	<meta name="description" content="<?php echo "Don Express : application de Livraison de repas" ?>">
+	<meta name="keywords" content="<?php echo "Livraison Repas Lomé commander" ?>">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">

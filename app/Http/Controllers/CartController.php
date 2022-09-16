@@ -308,7 +308,7 @@ class CartController extends Controller
 
         $cartItems = \Cart::getContent();
         // dd($cartItems);
-        return view('layouts.cart', [
+        return view('cart', [
             'cartItems' => $cartItems,
             'lang' => $lang,
             'close' => $close,
