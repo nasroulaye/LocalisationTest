@@ -14,7 +14,7 @@
                     <form v-on:submit.prevent="fetchShops">
                         <div class="pt-search">
                             <div class="pt-input">
-                            <x-input placeholder="Rechercher un restaurant" v-model="shopName" />
+                                <x-input placeholder="Rechercher un restaurant" v-model="shopName" />
                                 <i class="icons icon-magnifier"></i>
                             </div>
                         </div>
@@ -24,6 +24,7 @@
                     </form>
                 </div>
             </div>
+
             <div class="col-8">
                 <div class="row">
                 <div v-show="locationErrorMessage" class="text-center">@{{ locationErrorMessage }}</div>
@@ -32,8 +33,8 @@
                             <div class="col-4" v-for="shop in shops" :key="shop.id">
                                 <div class="pt-item">
                                     <div class="pt-thumb"><img src="" onerror="this.src='{{ asset('img/noimage.jpg') }}'"> </div>
-                                    <div class="pt-title"><h3>@{{ shop.nom }}</h3></div>
-                                    <div class="pt-address"><i class="fas fa-map-marker-alt"></i>@{{ shop.adresse }}</div>
+                                    <div class="pt-title"><h3>@{{ shop.name }}</h3></div>
+                                    <div class="pt-address"><i class="fas fa-map-marker-alt"></i>adresse</div>
                                     <div class="pt-stars" v-if="shop.distance"><strong>@{{ parseInt(shop.distance).toLocaleString() }}m away</strong></div>
                                 </div>
                             </div>
@@ -60,7 +61,7 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/restaurants`, {
+                        axios.get(`/dashboard`, {
                             params: {
                                 shopName: this.shopName,
                                 long: this.long,
