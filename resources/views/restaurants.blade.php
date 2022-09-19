@@ -20,7 +20,7 @@
                     <form v-on:submit.prevent="fetchShops">
                         <div class="pt-search">
                             <div class="pt-input">
-                            <x-input placeholder="Rechercher un restaurant" v-model="restaurantName" />
+                            <x-input placeholder="Rechercher un restaurant" v-model="shopName" />
                                 <i class="icons icon-magnifier"></i>
                             </div>
                         </div>
@@ -35,14 +35,14 @@
                 <div v-show="locationErrorMessage" class="text-center">@{{ locationErrorMessage }}</div>
                 <div v-show="loading" class="text-center">Loading...</div>
                 <div v-show="!loading" class="grid grid-cols-3 gap-4" style="display: none;">
-                    <div class="col-4" v-for="restaurants in restauants" :key="restaurants.id">
-                        <div class="pt-item">
-                            <div class="pt-thumb"><img src="" onerror="this.src='{{ asset('img/noimage.jpg') }}'"> </div>
-                            <div class="pt-title"><h3>@{{ restaurants.nom }}</h3></div>
-                            <div class="pt-address"><i class="fas fa-map-marker-alt"></i>Adresse</div>
-                            <div class="pt-stars" v-if="restaurant.distance"><strong>@{{ parseInt(restaurants.distance).toLocaleString() }}m away</strong></div>
-                        </div>
-                    </div>
+                            <div class="col-4" v-for="shop in shops" :key="shop.id">
+                                <div class="pt-item">
+                                    <div class="pt-thumb"><img src="" onerror="this.src='{{ asset('img/noimage.jpg') }}'"> </div>
+                                    <div class="pt-title"><h3>@{{ shop.name }}</h3></div>
+                                    <div class="pt-address"><i class="fas fa-map-marker-alt"></i>Adresse</div>
+                                    <div class="pt-stars" v-if="shop.distance"><strong>@{{ parseInt(shop.distance).toLocaleString() }}m away</strong></div>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
@@ -55,10 +55,10 @@
             Vue.createApp({
                 data() {
                     return {
-                        restaurantName: "",
+                        shopName: "",
                         long: "",
                         lat: "",
-                        restaurants: [],
+                        shops: [],
                         loading: false,
                         locationErrorMessage: "",
                     }
@@ -66,14 +66,14 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/restaurants`, {
+                        axios.get(`/dashboard`, {
                             params: {
-                                restaurantName: this.restaurantName,
+                                shopName: this.shopName,
                                 long: this.long,
                                 lat: this.lat,
                             }
                         }).then(res => {
-                            this.restaurants = res.data.restaurants;
+                            this.shops = res.data.shops;
                         }).finally(() => {
                             this.loading = false;
                         })
@@ -89,7 +89,7 @@
                                 closure()
                             }, (error) => {
                                 if (error.code === 1) {
-                                    this.locationErrorMessage = "Activez la localisation pour continuer !";
+                                    this.locationErrorMessage = "Autorisez la localisation pour decouvrir les restaurants!";
                                 }
                             });
                         } else { 

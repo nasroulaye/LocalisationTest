@@ -54,7 +54,6 @@
     </head>
     <body<?=(page?' class="pt-'.page.'page"':'')?>>
         @include('layouts.header')
-        
         <main>
             {{ $slot }}
         </main>
