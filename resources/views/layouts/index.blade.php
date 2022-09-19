@@ -1,4 +1,34 @@
 <x-app-layout>
+	<div class="pt-header-content">
+		<div class="container">
+			<div class="pt-body">
+				<h1>DonExpress <br> rapide & éfficace !</h1>
+				<p>
+					DonExpress vous permet de vous faire livrer vos repas de restaurants et de petites courses partout à Lomé
+				</p>
+				<a href="restaurants"> COMMANDER MAINTENANT<i class="fas fa-long-arrow-alt-right"></i></a>
+				
+				<div class="pt-info">
+					<div>
+						<span><i class="icons icon-clock"></i></span>
+						<h3>Aujourd'hui 08h - 19h</h3>
+						<p>Horaires</p>
+					</div>
+				</div>
+				
+				<div>
+					<span><i class="icons icon-phone"></i></span>
+					<h3>+228 70 30 55 66</h3>
+					<p>Nous appeler</p>
+				</div>
+			</div>
+		</div>
+		<div class="pt-thumb">
+			<span class="pt-bg"></span>
+			<img src="{{ asset('img/burger.png') }}" onerror="this.src='{{ asset('img/nophoto.jpg') }}'" />
+		</div>
+	</div><!-- End header Content -->
+	
 	<div class="pt-section pt-best">
 		<div class="container">
 			<div class="pt-section-title">

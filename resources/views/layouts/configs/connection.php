@@ -5,13 +5,14 @@ $connect = [
 	'HOSTNAME' => 'localhost',
 
 	# Database Username
-	'USERNAME' => 'uvrgbdcgjf',
-
+	'USERNAME' => 'root',
+	//UserName: uvrgbdcgjf
+	//Password : m3uUxzszSj
 	# Database Password
-	'PASSWORD' => 'm3uUxzszSj',
+	'PASSWORD' => '',
 
 	# Database Name
-	'DATABASE' => 'uvrgbdcgjf'
+	'DATABASE' => ''
 ];
 
 # Tables' Prefix
