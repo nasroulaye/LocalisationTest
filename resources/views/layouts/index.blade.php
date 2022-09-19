@@ -14,14 +14,12 @@
 						<h3>Aujourd'hui 08h - 19h</h3>
 						<p>Horaires</p>
 					</div>
-				</div>
-				
-				<div class="pt-info">
 					<div>
 						<span><i class="icons icon-phone"></i></span>
 						<h3>+228 70 30 55 66</h3>
 						<p>Nous appeler</p>
 					</div>
+					
 				</div>
 			</div>
 		</div>
