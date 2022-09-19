@@ -58,7 +58,7 @@
                         restaurantName: "",
                         long: "",
                         lat: "",
-                        shops: [],
+                        restaurants: [],
                         loading: false,
                         locationErrorMessage: "",
                     }
@@ -73,7 +73,7 @@
                                 lat: this.lat,
                             }
                         }).then(res => {
-                            this.shops = res.data.shops;
+                            this.restaurants = res.data.restaurants;
                         }).finally(() => {
                             this.loading = false;
                         })

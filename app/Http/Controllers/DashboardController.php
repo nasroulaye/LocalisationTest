@@ -3,33 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
-use App\Models\Restaurants;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function restaurants(Request $request)
+    public function index(Request $request)
     {
         if (!$request->ajax()) {
             return view('restaurants');
         }
         
-        $restaurants = Restaurants::select(["*"])
+        $shops = Shop::select(['id', 'name'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
                         POINT('$request->long', '$request->lat'), POINT(longitude, latitude)
                     ) as distance"))
                     ->orderBy('distance');
             })
-            ->when($request->restaurantName, function ($query, $restaurantName) {
-                $query->where('restaurants.nom', 'like', "%{$restaurantName}%");
+            ->when($request->shopName, function ($query, $shopName) {
+                $query->where('shops.name', 'like', "%{$shopName}%");
             })
             ->take(9)
             ->get();
-            
+
         return response()->json([
-            'restaurants' => $restaurants,
+            'shops' => $shops,
         ]);
     }
 }
