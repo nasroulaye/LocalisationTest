@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+    public function restaurants(Request $request)
     {
         if (!$request->ajax()) {
             return view('restaurants');
