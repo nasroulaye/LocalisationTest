@@ -16,7 +16,7 @@
 					</div>
 				</div>
 				
-				<div>
+				<div class="pt-info">
 					<span><i class="icons icon-phone"></i></span>
 					<h3>+228 70 30 55 66</h3>
 					<p>Nous appeler</p>
@@ -28,7 +28,7 @@
 			<img src="{{ asset('img/burger.png') }}" onerror="this.src='{{ asset('img/nophoto.jpg') }}'" />
 		</div>
 	</div><!-- End header Content -->
-	
+
 	<div class="pt-section pt-best">
 		<div class="container">
 			<div class="pt-section-title">
