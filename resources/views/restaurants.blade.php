@@ -38,8 +38,8 @@
                             <div class="col-4" v-for="shop in shops" :key="shop.id">
                                 <div class="pt-item">
                                     <div class="pt-thumb"><img src="" onerror="this.src='{{ asset('img/noimage.jpg') }}'"> </div>
-                                    <div class="pt-title"><h3>@{{ shop.name }}</h3></div>
-                                    <div class="pt-address"><i class="fas fa-map-marker-alt"></i>Adresse</div>
+                                    <div class="pt-title"><h3>@{{ shop.nom }}</h3></div>
+                                    <div class="pt-address"><i class="fas fa-map-marker-alt"></i>@{{ shop.adresse }}</div>
                                     <div class="pt-stars" v-if="shop.distance"><strong>@{{ parseInt(shop.distance).toLocaleString() }}m away</strong></div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/dashboard`, {
+                        axios.get(`/restaurants`, {
                             params: {
                                 shopName: this.shopName,
                                 long: this.long,
