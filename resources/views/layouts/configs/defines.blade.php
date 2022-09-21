@@ -1,8 +1,11 @@
 <?php
-# Getting the current page name
-define("page", basename($_SERVER['PHP_SELF'], '.php'));
 
-# If the installation file exists
-if (file_exists(__DIR__."/../install.php")) {
-	die('<meta http-equiv="refresh" content="0;url=install.php">');
-}
+use Illuminate\Support\Facades\Route;
+
+$route = Route::current();
+dd($route);
+
+$name = $route->getName();
+
+define("page", $name);
+
