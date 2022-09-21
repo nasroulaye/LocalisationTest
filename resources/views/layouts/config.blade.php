@@ -89,20 +89,6 @@ define("path", getBaseUrl());
 @include('layouts.configs.defines')
 <?php
 
-// include __DIR__."/configs/connection.blade.php";
-// include __DIR__."/configs/defines.blade.php";
-// include __DIR__."/configs/countries.blade.php";
-// include __DIR__."/configs/phone.blade.php";
-// include __DIR__."/configs/functions.blade.php";
-// include __DIR__."/configs/pagination.blade.php";
-// include __DIR__."/configs/class.upload.blade.php";
-
-
-# Site Details
-//db_global();
-
-# User Details
-//db_login_details();
 
 if(in_array(page, ['configs', 'login'])){
   header("HTTP/1.0 404 Not Found");
