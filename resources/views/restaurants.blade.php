@@ -71,7 +71,7 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/dashboard`, {
+                        axios.get(`/restaurants`, {
                             params: {
                                 shopName: this.shopName,
                                 long: this.long,
