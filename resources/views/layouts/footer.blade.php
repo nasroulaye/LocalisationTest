@@ -55,7 +55,7 @@
 		</div>
 	</div>
 </form>
-
+<!--
 <form id="senditemtocart">
 <div class="modal fade newmodal" id="addtocartModal">
 	<div class="modal-dialog">
@@ -91,7 +91,7 @@
 					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menus2">Reviews</a></li>
 				</ul>
 
-				<!-- Tab panes -->
+				<!-- Tab panes 
 				<input type="hidden" name="item_id" value="{{ $item->id }}">
 				<input type="hidden" name="item_price" value="{{ $item->prix }}">
 				<input type="hidden" name="item_quantities" value="1">
@@ -102,6 +102,7 @@
 	</div>
 </div>
 </form>
+-->
 @include('layouts.scripts')
 
 </body>
