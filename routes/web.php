@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth'])->name('dashboard');
+Route::get('/restaurants', [DashboardController::class, 'restaurants'])
+    ->middleware(['auth'])->name('index');
 
 require __DIR__.'/auth.php';

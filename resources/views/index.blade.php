@@ -4,7 +4,7 @@
 			<div class="pt-body">
 				<h1>DonExpress <br> rapide & éfficace !</h1>
 				<p>
-					DonExpress vous permet de vous faire livrer vos repas de restaurants et de petites courses partout à Lomé
+					DonExpress vous permet de vous faire livrer vos repas de restaurants et de petites courses partout à Lomé !
 				</p>
 				<a href="restaurants"> COMMANDER MAINTENANT<i class="fas fa-long-arrow-alt-right"></i></a>
 				
