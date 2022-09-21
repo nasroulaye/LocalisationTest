@@ -2,6 +2,49 @@
 session_start();
 error_reporting(0);
 function rewrite_urls($change){
+  $match = [
+
+    '/restaurants.php\?id=([0-9]+)&t=([A-Za-z0-9_-]+)/',
+    '/restaurants.php/',
+
+    '/cuisines.php\?id=([0-9]+)&t=([0-9a-zA-z]+)/',
+    '/cuisines.php/',
+
+    '/pages.php\?id=([0-9]+)&t=([0-9a-zA-z]+)/',
+    '/plans.php/',
+    '/cart.php/',
+    '/myorders.php/',
+    '/userdetails.php\?id=([0-9]+)/',
+    '/userdetails.php/',
+
+    '/restaurant.php\?pg=([a-zA-z]+)&request=([a-zA-z]+)&id=([0-9]+)/',
+    '/restaurant.php\?pg=([a-zA-z]+)&request=([a-zA-z]+)/',
+    '/restaurant.php\?pg=([a-zA-z]+)/',
+    '/restaurant.php/',
+
+  ];
+  $replace = [
+
+    'restaurants/$1/$2',
+    'restaurants',
+
+    'cuisines/$1/$2',
+    'cuisines',
+
+    'pages/$1/$2',
+    'plans',
+    'cart',
+    'myorders',
+    'userdetails/$1',
+    'userdetails',
+
+    'restaurant/$1/$2/$3',
+    'restaurant/$1/$2',
+    'restaurant/$1',
+    'restaurant',
+
+  ];
+
   $change = preg_replace($match, $replace, $change);
 
 	return $change;
@@ -43,7 +86,9 @@ define("path", getBaseUrl());
 //class.upload.php
 
 ?>
-
+@include('layouts.configs.defines')
+@include('layouts.configs.functions')
+@include('layouts.configs.pagination')
 <?php
 
 // include __DIR__."/configs/connection.blade.php";
@@ -64,10 +109,6 @@ define("path", getBaseUrl());
 if(in_array(page, ['configs', 'login'])){
   header("HTTP/1.0 404 Not Found");
 }
-
-# User Client Info
-?>
-<?php
 
 # GET Defined vars
 $request = (isset($_GET['request']) ? sc_sec($_GET['request']) : '');
@@ -90,3 +131,10 @@ if($pg == "ordersuccess"){
 	setcookie("addtocart", "", 1);
 	unset($_COOKIE['addtocart']);
 }
+
+// require 'vendor/autoload.blade.php';
+
+define("get_country_name", (in_array(page, ["response", "stripe"]) ? (isset($ipall['country_name']) ? $ipall['country_name'] : "") : "") );
+define("get_country_code", (in_array(page, ["response", "stripe"]) ?  (isset($ipall['country']) ? $ipall['country'] : "") : "") );
+define("get_state",        (in_array(page, ["response", "stripe"]) ?  (isset($ipall['region']) ? $ipall['region'] : "") : "") );
+define("get_city_name",    (in_array(page, ["response", "stripe"]) ?  (isset($ipall['city']) ? $ipall['city'] : "") : "") );
