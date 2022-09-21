@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-6">
 				<div class="pt-links">
-					<h3>{{ $home_links }}</h3>
+					<h3>Liens Utiles</h3>
           			<a href="titres Des liens à remplacer"><i class="fas fa-long-arrow-alt-right"></i> titres Des liens à remplacer </a>
 				</div>
 			</div>
