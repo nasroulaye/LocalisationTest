@@ -23,23 +23,23 @@
                     </form>
                 </div>
             </div>
+
             <div col="8">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="mt-8 shadow-sm sm:rounded-lg">
-                        <div v-show="locationErrorMessage" class="text-center">@{{ locationErrorMessage }}</div>
-                        <div v-show="loading" class="text-center">Loading...</div>
-                        <div v-show="!loading" class="grid grid-cols-3 gap-4" style="display: none;">
-                            <div class="p-6 bg-white border-b border-gray-200"
-                                v-for="shop in shops"
-                                :key="shop.id">
-                                <div class="text-xl">@{{ shop.name }}</div>
-                                <div class="mt-4 text-gray-500"
-                                    v-if="shop.distance">@{{ parseInt(shop.distance).toLocaleString() }}m away</div>
-                            </div>
+                <div class="row" v-for="shop in shops" :key="shop.id">
+                    <div class="col-4">
+                        <div class="pt-item">
+                            <div v-show="locationErrorMessage" class="text-center">@{{ locationErrorMessage }}</div>
+                            <div v-show="loading" class="text-center">Loading...</div>
+                            <div v-show="!loading" class="grid grid-cols-3 gap-4" style="display: none;">
+
+                            <div class="pt-thumb"><img src="" alt="nomPhoto" onerror="this.src="''"></div>
+				            <div class="pt-title"><a href="/restaurants"><h3>@{{ shop.name }}</h3></a></div>
+				            <div class="pt-stars" v-if="shop.distance">@{{ parseInt(shop.distance).toLocaleString() }}m away</div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         
     </div>
