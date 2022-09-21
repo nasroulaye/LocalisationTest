@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index')->middleware(['auth'])->name('dashboard');
+    return view('index');
 });
 
-Route::get('/restaurants', [DashboardController::class, 'restaurants']);
+Route::get('/restaurants', [DashboardController::class, 'restaurants'])
+    ->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
