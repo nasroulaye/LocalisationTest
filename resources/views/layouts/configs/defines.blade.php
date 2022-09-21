@@ -1,6 +1,6 @@
 <?php
 # Getting the current page name
-define("page", basename($_SERVER['PHP_SELF'], '.php'));
+define("page", basename($_SERVER['PHP_SELF']));
 define("nophoto", path."/img/nophoto.jpg");
 define("noimage", path."/img/noimage.jpg");
 
