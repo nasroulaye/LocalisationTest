@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/restaurants', [DashboardController::class, 'restaurants'])
-    ->middleware(['auth'])->name('index');
+    ->middleware(['auth'])->name('restaurants');
 
 require __DIR__.'/auth.php';

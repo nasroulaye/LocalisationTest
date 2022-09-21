@@ -1,6 +1,6 @@
 <?php
 # Getting the current page name
-define("page", basename($_SERVER['PHP_SELF'], '.blade.php'));
+define("page", basename($_SERVER['PHP_SELF'], '.php'));
 
 # If the installation file exists
 if (file_exists(__DIR__."/../install.php")) {
