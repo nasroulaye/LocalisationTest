@@ -10,6 +10,10 @@ class DashboardController extends Controller
 {
     public function restaurants(Request $request)
     {
+        if (!$request->ajax()) {
+            return view('restaurants');
+        }
+
         $shops = Shop::select(['id', 'name'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
@@ -23,11 +27,8 @@ class DashboardController extends Controller
             ->take(9)
             ->get();
 
-        if (!$request->ajax()) {
-            return view('restaurants',[
-                'shops' => $shops,
-            ]);
-        }
-        
+        return response()->json([
+            'shops' => $shops,
+        ]);
     }
 }
