@@ -33,9 +33,9 @@
                             <div class="col-4" v-for="shop in shops" :key="shop.id">
                                 <div class="pt-item">
                                     <div class="pt-thumb"><img src="" onerror="this.src='{{ asset('img/noimage.jpg') }}'"> </div>
-                                    <div class="pt-title"><h3>@{{ shop.name }}</h3></div>
+                                    <div class="pt-title"><h3>Makelele</h3></div>
                                     <div class="pt-address"><i class="fas fa-map-marker-alt"></i>adresse</div>
-                                    <div class="pt-stars" v-if="shop.distance"><strong>@{{ parseInt(shop.distance).toLocaleString() }}m away</strong></div>
+                                    <div class="pt-stars" v-if="shop.distance"><strong>10km</strong></div>
                                 </div>
                             </div>
                 </div>

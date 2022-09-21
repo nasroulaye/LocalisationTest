@@ -5,15 +5,16 @@ $connect = [
 	'HOSTNAME' => 'localhost',
 
 	# Database Username
-	'USERNAME' => 'uvrgbdcgjf',
+	'USERNAME' => 'root',
 	//UserName: uvrgbdcgjf
 	//Password : m3uUxzszSj
 	//DBName : uvrgbdcgjf
+	//Password : m3uUxzszSj
 	# Database Password
-	'PASSWORD' => 'm3uUxzszSj',
+	'PASSWORD' => '',
 
 	# Database Name
-	'DATABASE' => 'uvrgbdcgjf'
+	'DATABASE' => 'donex1709834_1f3zik'
 ];
 
 # Tables' Prefix
