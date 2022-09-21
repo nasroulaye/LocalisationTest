@@ -33,10 +33,6 @@
 
 <script src="{{ asset('js/custom.js') }}"></script>
 
-<?php if ($pg == "pages" && $request == 'new'): ?>
-<?php else: ?>
 <script src="{{ asset('js/scroll.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('css/scroll.css') }}">
-<?php endif; ?>
-
 
