@@ -88,7 +88,6 @@ define("path", getBaseUrl());
 ?>
 @include('layouts.configs.defines')
 @include('layouts.configs.functions')
-@include('layouts.configs.pagination')
 <?php
 
 // include __DIR__."/configs/connection.blade.php";
