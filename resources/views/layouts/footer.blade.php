@@ -55,54 +55,7 @@
 		</div>
 	</div>
 </form>
-<!--
-<form id="senditemtocart">
-<div class="modal fade newmodal" id="addtocartModal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<div class="modal-body">
-				<div class="media">
-					<div class="media-left">
-						<div class="pt-thumb"><img src="#" alt="{{ $item->nom }}" onerror="this.src='{{ asset('img/noimage.jpg') }}'"></div>
-					</div>
-					<div class="media-body">
-						<h3>{{ $item->nom }}</h3>
-						<div class="pt-quantity">
-							<i class="fas fa-minus pt-minus"></i>
-							<input type="text" name="item_quantity" value="1" disabled>
-							<i class="fas fa-plus pt-plus"></i>
-						</div>
 
-						<span class="pt-ingredient"><i class="fas fa-utensils"></i> <b>Ingredient:</b> ExempleIngrediants</span>
-						<textarea name="item_note" placeholder="Your extra note"></textarea>
-					</div>
-				</div>
-
-				<div class="pt-price-det">
-					<div class="pt-price pt-totalprice">{{ $item->prix }}</div>
-					<button type="button" class="pt-btn pt-buytocart" data-buy="false">Ajouter au panier</button>
-					<button type="submit" class="pt-buy" data-buy="true">Commander</button>
-				</div>
-
-				<ul class="nav nav-tabs">
-					<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#homes">Extra</a></li>
-					<li class="nav-item"><a class="nav-link<?=(!$item_rs['extra']?' active':'')?>" data-toggle="tab" href="#menus1">Description</a></li>
-					<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menus2">Reviews</a></li>
-				</ul>
-
-				<!-- Tab panes 
-				<input type="hidden" name="item_id" value="{{ $item->id }}">
-				<input type="hidden" name="item_price" value="{{ $item->prix }}">
-				<input type="hidden" name="item_quantities" value="1">
-				<input type="hidden" name="item_delivery_price" value="{{ $item->livrason }}">
-
-			</div>
-		</div>
-	</div>
-</div>
-</form>
--->
 @include('layouts.scripts')
 
 </body>
