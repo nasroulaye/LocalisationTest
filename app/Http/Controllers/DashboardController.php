@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Restaurants;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function restaurants(Request $request)
+    public function index(Request $request)
     {
         if (!$request->ajax()) {
-            return view('restaurants');
+            return view('dashboard');
         }
-        
-        $shops = Restaurants::select(['id', 'name'])
+
+        $shops = Shop::select(['id', 'name'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
                         POINT('$request->long', '$request->lat'), POINT(longitude, latitude)

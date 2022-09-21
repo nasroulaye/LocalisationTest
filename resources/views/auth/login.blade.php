@@ -1,14 +1,8 @@
 <x-guest-layout>
-    <style>
-        .center{
-            display: block;
-            padding-left: 50px;
-        }
-    </style>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img src="{{ asset('img/DonExpress.png') }}" width="300" height="100"  class="center" alt="logo">
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -49,7 +43,7 @@
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Mot de passe oublié?') }}
+                        {{ __('Forgot your password?') }}
                     </a>
                 @endif
 
