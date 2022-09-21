@@ -49,7 +49,7 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/restaurants`, {
+                        axios.get(`/dashboard`, {
                             params: {
                                 shopName: this.shopName,
                                 long: this.long,
@@ -89,3 +89,4 @@
         </script>
     @endpush
 </x-app-layout>
+@include('layouts.footer')
