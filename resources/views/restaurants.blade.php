@@ -6,26 +6,7 @@
         </div>
     </div>
 
-    <!--Recherche de restaurant -->
-    <div class="container" id="restaurants">
-        <div class="row pt-restaurants">
-            <!--<div class="col-4">
-                <div class="pt-restaurant-sidebar">
-                    <form v-on:submit.prevent="fetchShops">
-                        <div class="pt-search">
-                            <div class="pt-input">
-                                <x-input placeholder="Rechercher un restaurant" v-model="shopName" />
-                                <i class="icons icon-magnifier"></i>
-                            </div>
-                        </div>
-                        <div class="pt-submit">
-                            <x-button>Rechercher <i class="fas fa-long-arrow-alt-right"></i></x-button>
-                        </div>
-                    </form>
-                </div>
-            </div>-->
-
-            <div class="py-12" id="shops">
+    <div class="py-12" id="shops">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <form class="flex items-center justify-center"
                         v-on:submit.prevent="fetchShops">
@@ -51,8 +32,6 @@
                 </div>
             </div>
 
-    </div>
-
     @push('script')
         <script src="https://unpkg.com/vue@next"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
@@ -71,7 +50,7 @@
                 methods: {
                     fetchShops() {
                         this.loading = true;
-                        axios.get(`/dashboard`, {
+                        axios.get(`/restaurants`, {
                             params: {
                                 shopName: this.shopName,
                                 long: this.long,
