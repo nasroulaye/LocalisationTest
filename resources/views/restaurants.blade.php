@@ -1,10 +1,10 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-    
+    <div class="pt-breadcrumb-p">
+        <div class="container">
+            <h3>Restaurants</h3>
+            <p>Découvrez les restaurants disponibles</p>
+        </div>
+    </div>
     <div class="py-12" id="shops">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form class="flex items-center justify-center"
@@ -89,3 +89,4 @@
         </script>
     @endpush
 </x-app-layout>
+@include('layouts.footer')
