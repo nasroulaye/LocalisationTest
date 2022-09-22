@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         Users::factory(5)->create();
         Shop::factory(5)->create();
+        Restaurants::factory(5)->create();
     }
 }
