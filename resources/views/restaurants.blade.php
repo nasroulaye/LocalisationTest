@@ -1,10 +1,4 @@
 <x-app-layout>
-    <div class="pt-breadcrumb-p">
-        <div class="container">
-            <h3>Restaurants</h3>
-            <p>Découvrez les restaurants disponibles</p>
-        </div>
-    </div>
     <div class="py-12" id="shops">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <form class="flex items-center justify-center"
