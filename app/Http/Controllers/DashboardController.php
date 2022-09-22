@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurants;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class DashboardController extends Controller
             return view('restaurants');
         }
         
-        $shops = Shop::select(['id', 'name'])
+        $shops = Restaurants::select(['id', 'nom'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
                         POINT('$request->long', '$request->lat'), POINT(longitude, latitude)
@@ -22,7 +23,7 @@ class DashboardController extends Controller
                     ->orderBy('distance');
             })
             ->when($request->shopName, function ($query, $shopName) {
-                $query->where('shops.name', 'like', "%{$shopName}%");
+                $query->where('restaurants.nom', 'like', "%{$shopName}%");
             })
             ->take(9)
             ->get();
