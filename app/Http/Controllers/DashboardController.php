@@ -27,6 +27,7 @@ class DashboardController extends Controller
             })
             ->take(9)
             ->get();
+        dd($shops);
 
         return response()->json([
             'shops' => $shops,
