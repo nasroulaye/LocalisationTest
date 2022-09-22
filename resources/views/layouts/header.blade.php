@@ -24,7 +24,7 @@
 							<li class="pt-cart">
 								<a href="/cart">
 									<i class="icon-basket icons"></i>
-									<b>{{ Cart::getTotalQuantity()}}</b>
+									<b><!--{{ Cart::getTotalQuantity()}}-->5</b>
 								</a>
 							</li>
 							<li class="pt-login">
