@@ -15,7 +15,7 @@ class DashboardController extends Controller
             return view('restaurants');
         }
         
-        $shops = Restaurants::select(['id', 'nom'])
+        $shops = Shop::select(['id', 'nom'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
                         POINT('$request->long', '$request->lat'), POINT(number(longitude), number(latitude))
@@ -23,7 +23,7 @@ class DashboardController extends Controller
                     ->orderBy('distance');
             })
             ->when($request->shopName, function ($query, $shopName) {
-                $query->where('restaurants.nom', 'like', "%{$shopName}%");
+                $query->where('$shops.name', 'like', "%{$shopName}%");
             })
             ->take(9)
             ->get();
