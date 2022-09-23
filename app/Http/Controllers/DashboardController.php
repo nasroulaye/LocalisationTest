@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $shops = Shop::select(['id', 'name'])
             ->when($request->long and $request->lat, function ($query) use ($request) {
                 $query->addSelect(DB::raw("ST_Distance_Sphere(
-                        POINT('$request->long', '$request->lat'), POINT(longitude,latitude)
+                        POINT('$request->long', '$request->lat'), POINT(longtude,latitude)
                     ) as distance"))
                     ->orderBy('distance');
             })
