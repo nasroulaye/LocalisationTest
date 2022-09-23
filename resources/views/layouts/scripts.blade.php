@@ -30,12 +30,6 @@
 <script src="{{ asset('js/jquery.jscrollpane.min.js') }}"></script>
 <script src="{{ asset('js/jquery.mousewheel.js') }}"></script>
 
-<script>
-	var path         = '<?=path?>';
-	var lang         = <?=json_encode($lang)?>;
-	var nophoto      = '<?=nophoto?>';
-</script>
-
 <script src="{{ asset('js/custom.js') }}"></script>
 
 <?php if ($pg == "pages" && $request == 'new'): ?>
