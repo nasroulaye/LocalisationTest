@@ -15,7 +15,7 @@ use App\Http\Controllers\CartController;
 |
 */
 
-Route::get('/', [PostController::class, 'accueil'])->middleware(['auth'])->name('dashboard');
+Route::get('/', [PostController::class, 'accueil'])->middleware(['auth'])->name('index');
 
 Route::get('{id}/restaurants', [PostController::class, 'restaurantDetail'])->name('restaurant.show');
 Route::get('about', [PostController::class, 'About']);
@@ -27,6 +27,6 @@ Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.up
 Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
-Route::get('/restaurants', [DashboardController::class, 'restaurants']);
+Route::get('/restaurants', [DashboardController::class, 'restaurants'])->name('restaurants');
 
 require __DIR__.'/auth.php';
